@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: phparray\n"
+"POT-Creation-Date: 2015-01-14 18:24+0100\n"
+"PO-Revision-Date: 2015-01-14 18:24+0100\n"
+"Last-Translator: ptkobe <incineracao@gmail.com>\n"
+"Language-Team: \n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../../..\n"
+
+#: ../../../a_functions.php:27 ../../../a_functions.php:40
+msgid "dimensions must be positive integers"
+msgstr ""
+
+#: ../../../a_functions.php:49
+msgid "invalid random limits"
+msgstr ""
+
+#: ../../../a_functions.php:63 ../../../a_functions.php:93
+#: ../../../a_functions.php:129 ../../../a_functions.php:173
+#: ../../../a_functions.php:212 ../../../phparray.php:44
+msgid "THE first"
+msgstr "first"
+
+#: ../../../a_functions.php:63 ../../../a_functions.php:66
+#: ../../../a_functions.php:93 ../../../a_functions.php:96
+#: ../../../a_functions.php:129 ../../../a_functions.php:173
+#: ../../../a_functions.php:212 ../../../a_functions.php:215
+#: ../../../phparray.php:44
+msgid "argument must be an array"
+msgstr ""
+
+#: ../../../a_functions.php:66 ../../../a_functions.php:96
+#: ../../../a_functions.php:149 ../../../a_functions.php:176
+#: ../../../a_functions.php:215
+msgid "second"
+msgstr ""
+
+#: ../../../a_functions.php:81 ../../../a_functions.php:111
+#: ../../../a_functions.php:140 ../../../a_functions.php:162
+#: ../../../a_functions.php:192 ../../../a_functions.php:201
+#: ../../../a_functions.php:231 ../../../a_functions.php:241
+#: ../../../phparray.php:64 ../../../phparray.php:75
+msgid "invalid result"
+msgstr ""
+
+#: ../../../a_functions.php:149 ../../../a_functions.php:176
+#: ../../../phparray.php:47
+msgid "argument must be a numeric or an array"
+msgstr ""
+
+#: ../../../phparray.php:47
+msgid "THE second"
+msgstr "second"
