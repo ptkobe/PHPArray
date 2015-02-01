@@ -1,4 +1,5 @@
 <?php
+namespace enove\PHPArray;
 
 if (!defined('PHPARRAY_DOMAIN')) {
 	define('PHPARRAY_DOMAIN','phparray');
@@ -12,10 +13,14 @@ if (!defined('PHPARRAY_DOMAIN')) {
 
 require_once 'A.php';
 
+if (!defined('PHPARRAY_VCLASS')) {
+	define('PHPARRAY_VCLASS',__NAMESPACE__.'\V');
+}
+
 /**
  *
  */
-class V implements ArrayAccess, Countable, Iterator
+class V implements \ArrayAccess, \Countable, \Iterator
 {
 	protected $storage;
 	
@@ -64,7 +69,8 @@ class V implements ArrayAccess, Countable, Iterator
 	 */
     public function __construct(&$a, $checkValue = NULL)
     {
-		$this->storage = new A($a, $checkValue);
+		$aclass = PHPARRAY_ACLASS;
+		$this->storage = new $aclass($a, $checkValue);
 		$this->refreshKeys();
     }
 

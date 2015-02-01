@@ -3,13 +3,13 @@
 * @package PHPArray
 */
 
-$class = 'A';
-
 // see autoloading
-require_once '../'.$class.'.php';
+require_once '../A.php';
+
+$class = PHPARRAY_ACLASS;
 
 // use to test ArrayObject instead
-#$class = 'ArrayObject';
+#$class = '\ArrayObject';
 
 class PHPArrayTest extends PHPUnit_Framework_TestCase
 {
@@ -49,6 +49,16 @@ class PHPArrayTest extends PHPUnit_Framework_TestCase
 		$r = $A->getArray();
 
 		$this->assertEquals(array(1,2,'a'=>3,4,5,6,7,8,9), $r);
+	}
+
+	/**
+     * @expectedException DomainException
+	 */
+	public function testInvalidArg_Error()
+	{
+		global $class;
+		$v = 5;
+		$A = new $class($v);
 	}
 
 	/**

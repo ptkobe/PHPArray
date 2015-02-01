@@ -2,14 +2,10 @@
 /**
 * @package PHPArray
 */
-
-$class = 'V';
-
 // see autoloading
-require_once '../'.$class.'.php';
+require_once '../V.php';
 
-// use to test ArrayObject instead
-#$class = 'ArrayObject';
+$class = PHPARRAY_VCLASS;
 
 class PHPArrayTest extends PHPUnit_Framework_TestCase
 {
@@ -48,6 +44,16 @@ class PHPArrayTest extends PHPUnit_Framework_TestCase
 		$r = $A->getVector();
 
 		$this->assertEquals(array(1,2,  3,4,5,6,7,8,9), $r);
+	}
+
+	/**
+     * @expectedException DomainException
+	 */
+	public function testInvalidArg_Error()
+	{
+		global $class;
+		$v = 5;
+		$A = new $class($v);
 	}
 
 	/**

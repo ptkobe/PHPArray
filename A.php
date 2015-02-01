@@ -1,4 +1,5 @@
 <?php
+namespace enove\PHPArray;
 
 if (!defined('PHPARRAY_DOMAIN')) {
 	define('PHPARRAY_DOMAIN','phparray');
@@ -10,10 +11,14 @@ if (!defined('PHPARRAY_DOMAIN')) {
 	#textdomain($domain);
 }
 
+if (!defined('PHPARRAY_ACLASS')) {
+	define('PHPARRAY_ACLASS',__NAMESPACE__.'\A');
+}
+
 /**
  *
  */
-class A implements ArrayAccess, Countable, Iterator
+class A implements \ArrayAccess, \Countable, \Iterator
 #class A implements ArrayAccess, Countable, IteratorAggregate
 {
 	protected $storage;
@@ -83,7 +88,7 @@ class A implements ArrayAccess, Countable, Iterator
     public function __construct(&$a, $checkValue = NULL)
     {
 		if ( (gettype($a) != 'array') ) {
-			throw new DomainException(dgettext(PHPARRAY_DOMAIN, 'invalid argument'));
+			throw new \DomainException(dgettext(PHPARRAY_DOMAIN, 'invalid argument'));
 		}
 		
 		if ( is_null($checkValue) ) {
@@ -94,7 +99,7 @@ class A implements ArrayAccess, Countable, Iterator
 		$this->storage = &$a;
 		foreach ($a as $k=>&$v) {
 			if ( !$checkValue($v) ) {
-				throw new DomainException(dgettext(PHPARRAY_DOMAIN, 'Illegal array value'));
+				throw new \DomainException(dgettext(PHPARRAY_DOMAIN, 'Illegal array value'));
 			}
 			$this->offsetSetRef($k, $v);
 		} unset($v);
@@ -198,12 +203,12 @@ class A implements ArrayAccess, Countable, Iterator
 		#if ( !$this->checkValue($value) ) {
 		#if ( !static::checkValue($value) ) {
 		#if ( !$this->check_value($value) ) {
-			throw new DomainException(dgettext(PHPARRAY_DOMAIN, 'Illegal array value'));
+			throw new \DomainException(dgettext(PHPARRAY_DOMAIN, 'Illegal array value'));
 		}
 		
 		// Allow push key?
 		#if ( !$this->offsetExists($offset) ) {
-		#	throw new DomainException(dgettext(PHPARRAY_DOMAIN, 'Invalid key'));
+		#	throw new \DomainException(dgettext(PHPARRAY_DOMAIN, 'Invalid key'));
 		#}
 		
 		if ( is_null($offset) ) {
